@@ -7,7 +7,7 @@ const app = express();
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
-let dev_db_url = 'mongodb+srv://admin:abcd1234@cluster0-myg00.mongodb.net/test?retryWrites=true&w=majority'
+let dev_db_url = 'mongodb+srv://admin:abcd1234@cluster0-myg00.mongodb.net/products?retryWrites=true&w=majority'
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
@@ -21,5 +21,5 @@ app.use('/products', product);
 let port = 1234;
 
 app.listen(port, () => {
-    console.log('Server is up and running on port numner ' + port);
+    console.log('Server is up and running on port number ' + port);
 });
