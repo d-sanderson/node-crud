@@ -24,9 +24,9 @@ exports.product_details = function (req, res) {
   })
 };
 
-exports.product_update = (req, res) => {
+exports.product_update = (req, res, next) => {
   Product.findByIdAndUpdate(req.params.id, {$set: req.body},
-    function (err, product) {
+    function (err) {
       if(err) return next(err);
       res.send('Product Updated.')
     });
